@@ -59,8 +59,6 @@ while True:
     prompt += "Example Response #1:\n 3. run_a_command\n"
     prompt += "Example Response #2:\n 4. take_a_break\n"
     
-    print(prompt)
-    
     albert_action_choice = get_response(prompt)
     print("===ACTION===")
     print(albert_action_choice)
