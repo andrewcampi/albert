@@ -13,7 +13,7 @@ The purpose of Albert is to explore the boundaries of artificial intelligence be
 
 ## Important Note (PLEASE READ)
 
-If you run this project, you should know that Albert requires **a ton of API calls** to its LLM endpoint. Therefore, **you should NOT use an endpoint that costs money**, as it will get extremely expensive very quickly. By default, this project is equipped with **OpenAI** as its backend LLM in the file **helper/llm_endpoint.py**. It is highly recommneded that you use an open source model locally or an endpoint that does not charge you per request or per token generated.
+If you run this project, you should know that Albert requires **a ton of API calls** to its LLM endpoint. Therefore, **you should NOT use an endpoint that costs money**, as it will get extremely expensive very quickly. By default, this project is equipped with **OpenAI** as its backend LLM in the file **helper/llm_endpoint.py**. It is highly recommneded that you use an open source model locally or an endpoint that does not charge you per request or per token generated. Please rewrite the contents of helper/llm_endpoint.py to use the endpoint that works best for you.
 
 ## Getting Started
 
