@@ -61,4 +61,6 @@ def read_file(filename):
     path = f"alberts_brain/{filename}.txt"
     with open(path, "r") as f:
         contents = f.read()
+    if filename == "memories":
+        # return only a maximum of 25 lines (If there are more than 25 lines, return the ending 25 lines.)   
     return contents
