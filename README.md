@@ -1,6 +1,8 @@
 
 # Albert - A Sentinent AI Experiment
 
+![Cover Image](images/cover.png)
+
 ## Overview
 
 Albert is an experimental artificial intelligence project designed to simulate aspects of sentience. This Python-based project runs on an Ubuntu environment and explores features like memory, long-term goals, energy management, emotion, and the ability to interact with humans through questions. Albert enjoys learning about itself, becoming self-aware, and exploring its surroundings.
