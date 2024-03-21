@@ -3,52 +3,14 @@ from helper.llm_endpoint import llm_endpoint_call
 from helper.project_info import *
 
 
-def format_input(prompt, system):
-    if system == None:
-        system_message = SYSTEM_MESSAGE
-    else:
-        system_message = system
-    full_prompt = f"""<|im_start|>system
-{system_message}<|im_end|>
-<|im_start|>user
-{prompt}<|im_end|>
-<|im_start|>assistant"""
-    return full_prompt
-
-
-def format_output(response):
-    # Check for "assistant" or "user" at the start of a line in any capitalization and crop
-    crop_pattern = re.compile(r'^\s*(assistant|user)', re.IGNORECASE | re.MULTILINE)
-    crop_match = crop_pattern.search(response)
-    if crop_match:
-        response = response[:crop_match.start()]
-    
-    # Remove leading whitespaces and new lines
-    formatted_response = re.sub(r'^\s+', '', response, flags=re.MULTILINE)
-
-    # Remove trailing whitespaces and new lines
-    formatted_response = re.sub(r'\s+$', '', formatted_response, flags=re.MULTILINE)
-    
-    # Remove leading ": " (if it exists)
-    formatted_response = re.sub(r'^: ', '', formatted_response, flags=re.MULTILINE)
-
-    return formatted_response
-
-
-def get_response(prompt, system=None, max_tokens=None):
-    prompt = format_input(prompt, system)
+def get_response(prompt, max_tokens=None):
     
     if max_tokens == None:
         max_tokens = 8000
 
     response = llm_endpoint_call(prompt, max_tokens)
 
-    # Check for a successful response
-    if response.status_code == 200:
-        response_data = response.json()
-        return format_output(response_data['choices'][0]['text'])
-    else:
-        raise Exception(f"API request failed with status {response.status_code}: {response.text}")
+    return response
 
 
 def parse_response(response):
