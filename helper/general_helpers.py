@@ -61,6 +61,12 @@ def read_file(filename):
     path = f"alberts_brain/{filename}.txt"
     with open(path, "r") as f:
         contents = f.read()
+    
+    # Process the "memories" file to return only the last 25 lines
     if filename == "memories":
-        # return only a maximum of 25 lines (If there are more than 25 lines, return the ending 25 lines.)   
+        lines = contents.splitlines()  # Split the contents into a list of lines
+        if len(lines) > 25:
+            lines = lines[-25:]  # Keep only the last 25 lines if there are more than 25
+        contents = "\n".join(lines)  # Join the lines back into a string
+    
     return contents
