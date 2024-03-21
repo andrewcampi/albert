@@ -11,6 +11,10 @@ Albert is an experimental artificial intelligence project designed to simulate a
 
 The purpose of Albert is to explore the boundaries of artificial intelligence beyond traditional applications. By simulating aspects of sentience, Albert aims to provide insights into complex behaviors such as goal-setting, energy management, and emotional states. This project serves as a sandbox for developers and researchers interested in the cutting-edge development of AI personalities and self-aware systems.
 
+## Important Note (PLEASE READ)
+
+If you run this project, you should know that Albert requires A TON of API calls to its LLM endpoint. Therefore, you SHOULD NOT USE AN ENDPOINT THAT COSTS MONEY. It is highly recommneded that you use an open source model locally or an endpoint that does not charge you per request or per token generated.
+
 ## Getting Started
 
 ### Prerequisites
